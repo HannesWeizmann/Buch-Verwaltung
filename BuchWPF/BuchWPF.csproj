@@ -13,8 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FahrzeugDatenbank\BuchDatenbank.csproj" />
-    <ProjectReference Include="..\Fahrzeuge\Fahrzeuge.csproj" />
+    <ProjectReference Include="..\Buecher\Buecher.csproj" />
+    <ProjectReference Include="..\BuchDatenbank\BuchDatenbank.csproj" />
+    <ProjectReference Include="..\Buecher\Buecher.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Buecher
 {
-    public abstract class Buch
+    public class Buch
     {
         //Konstruktor
         public Buch()
@@ -16,6 +16,7 @@ namespace Buecher
 
         public string? titel { get; set; }
         public string? autor { get; set; }
+        public int Id { get; set; }
 
     }
 }

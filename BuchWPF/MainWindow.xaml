@@ -1,0 +1,73 @@
+﻿<Window x:Class="BuchWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BuchWPF"
+        mc:Ignorable="d"
+        Title="{Binding Path=MainWindowTitle}" 
+        Height="450" Width="900">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+            <Menu>
+                <MenuItem Header="Aktuelle Bücher">
+                </MenuItem>
+            </Menu>
+            <DataGrid x:Name="buchTabelle"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="True"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Path=Buecher}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=titel}" />
+                    <DataGridTextColumn Header="Autor" Binding="{Binding Path=autor}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding ElementName=buchTabelle, Path=DataContext.VerschiebenKommando}" CommandParameter="{Binding}">
+                                    Verschieben
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+            <Menu>
+                <MenuItem Header="Archivierte Bücher">
+                </MenuItem>
+            </Menu>
+            <DataGrid x:Name="buchTabelle2"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="True"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Path=Buecher2}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=titel}" />
+                    <DataGridTextColumn Header="Autor" Binding="{Binding Path=autor}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding ElementName=buchTabelle2, Path=DataContext.VerschiebenKommando}" CommandParameter="{Binding}">
+                                    Verschieben
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

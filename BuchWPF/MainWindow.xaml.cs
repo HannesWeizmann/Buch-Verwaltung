@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FahrzeugeWPF
+namespace BuchWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

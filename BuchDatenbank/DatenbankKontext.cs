@@ -22,10 +22,17 @@ namespace BuchDatenbank
         }
 
         public DbSet<BuchDTO> Buecher { get; set; }
+        public DbSet<Buch2DTO> Buecher2 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BuchDTO>().HasKey(e => e.Id);
         }
+        /*
+        protected override void OnModelCreating2(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Buch2DTO>().HasKey(e => e.Id);
+        }
+        */
     }
 }

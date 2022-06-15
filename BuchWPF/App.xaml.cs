@@ -1,11 +1,11 @@
-﻿using FahrzeugDatenbank;
+﻿using BuchDatenbank;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
 using System.Windows;
 
-namespace FahrzeugeWPF
+namespace BuchWPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -26,7 +26,7 @@ namespace FahrzeugeWPF
             services.AddScoped<KonfigurationsLeser>(sp => new KonfigurationsLeser(configuration)); 
             services.AddScoped(sp => new DatenbankKontext(sp.GetRequiredService<KonfigurationsLeser>().LiesDatenbankVerbindungZurMariaDB()));
             services.AddScoped<IBuchRepository, BuchOrmRepository>();
-            services.AddScoped<FahrzeugeModell>();
+            services.AddScoped<BuecherModell>();
             services.AddSingleton<MainWindowViewModel>();
             services.AddSingleton<MainWindow>();
 

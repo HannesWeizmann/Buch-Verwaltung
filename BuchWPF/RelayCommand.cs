@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace FahrzeugeWPF
+namespace BuchWPF
 {
     public class RelayCommand : ICommand
     {
@@ -14,10 +14,11 @@ namespace FahrzeugeWPF
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public RelayCommand(Action<object?> execute,
+        public RelayCommand(Action<object?> execute, Action<object?> execute2,
             Func<object?, bool>? canExecute = null)
         {
             this.execute = execute;
+            this.execute = execute2;
             this.canExecute = canExecute;
         }
 
