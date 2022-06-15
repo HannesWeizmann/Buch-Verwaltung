@@ -1,0 +1,38 @@
+﻿<Window x:Class="FahrzeugeWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FahrzeugeWPF"
+        mc:Ignorable="d"
+        Title="{Binding Path=MainWindowTitle}" 
+        Height="450" Width="800">
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="Liste">
+                <MenuItem Header="Liste leeren" Command="{Binding Path=LeerenKommando}"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="fahrzeugTabelle"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="True"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Path=Fahrzeuge}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
+                <!--<DataGridTextColumn Header="Typ" Binding="{Binding Path=Typ}" />-->
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding ElementName=fahrzeugTabelle, Path=DataContext.LoeschenKommando}" CommandParameter="{Binding}">
+                                Löschen
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>
