@@ -40,6 +40,7 @@ namespace BuchWPF
         public ICommand VerschiebenKommando { get; private set; }
         public ICommand VerschiebenKommando2 { get; private set; }
 
+        //Löschen Funktionen für linke und rechte Tabelle
         private void LoescheBuch(object? buch) 
         {
             if (buch == null) return;

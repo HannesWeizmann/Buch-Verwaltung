@@ -10,8 +10,6 @@ namespace BuchDatenbank
         void FuegeBuecherEin2(string titel, string autor);
         List<BuchDTO> HoleAlleBuecher();
         List<Buch2DTO> HoleAlleBuecher2();
-
-        //Zwei Funktionen zum löschen in linker und rechter Tabelle
         void LoescheBuch(int id);
         void LoescheBuch2(int id);
 
