@@ -9,7 +9,7 @@ namespace BuchDatenbank
         [Column("id")]
         public int Id { get; set; }
 
-        [Column("buch_name")]
+        [Column("titel")]
         public string? titel { get; set; }
 
         [Column("autor")]
@@ -24,7 +24,7 @@ namespace BuchDatenbank
         [Column("id")]
         public int Id { get; set; }
 
-        [Column("buch_name")]
+        [Column("titel")]
         public string? titel { get; set; }
 
         [Column("autor")]

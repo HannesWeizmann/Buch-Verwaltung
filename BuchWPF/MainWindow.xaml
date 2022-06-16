@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:BuchWPF"
         mc:Ignorable="d"
         Title="{Binding Path=MainWindowTitle}" 
-        Height="450" Width="900">
+        Height="450" Width="1000">
 
     <Grid>
         <!-- Aufteilung des Fensters in 2 gleich große Hälften-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="450" />
+            <ColumnDefinition Width="500" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         

@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL-Datei", "SQL-Datei", "{656B0225-BD50-40B1-99DF-A848B2CCB7F4}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\OneDrive\Dokumente\Studium\4. Semester\C#\BuchVerwaltung.sql = ..\..\..\OneDrive\Dokumente\Studium\4. Semester\C#\BuchVerwaltung.sql
+		..\..\..\Downloads\BuchVerwaltung.sql = ..\..\..\Downloads\BuchVerwaltung.sql
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buecher", "Buecher\Buecher.csproj", "{61E5E70E-5B83-4F41-93AC-236EA9705BA8}"

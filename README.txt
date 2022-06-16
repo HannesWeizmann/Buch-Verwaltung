@@ -7,3 +7,5 @@ Sonstige Anmerkungen:
 Verschieben-Funktion funktioniert nicht vollständig. Es wird bis nur das Objekt gelöscht.
 Danach sollte es in die jeweils andere Tabelle eingefügt werden, was allerdings nicht passiert. Funktionen dafür wurden implementiert,
 sie erfüllen aber nicht ihren Zweck. Die Aktualisierung der Tabellen sollte funktionieren.
+
+Githublink: https://github.com/HannesWeizmann/Buch-Verwaltung.git
