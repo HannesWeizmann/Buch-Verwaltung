@@ -68,7 +68,7 @@ namespace BuchWPF
 
         private void FuegeBuchWiederEin2(object? buch)
         {
-            _modell.FuegeBuchWiederEin((Buch)buch);
+            _modell.FuegeBuchWiederEin2((Buch)buch);
             Buecher.Add((Buch)buch);
         }
 

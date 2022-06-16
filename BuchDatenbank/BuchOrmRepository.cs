@@ -28,6 +28,7 @@ namespace BuchDatenbank
             _kontext.SaveChanges();
         }
         
+        //Fügt in linke Tabelle ein
         public void FuegeBuecherEin(string titel, string autor)
         {
             BuchDTO buch = new BuchDTO
@@ -54,6 +55,7 @@ namespace BuchDatenbank
             _kontext.SaveChanges();
         }
 
+        //Fügt in rechte Tabelle ein
         public void FuegeBuecherEin2(string titel, string autor)
         {
             Buch2DTO buch = new Buch2DTO
@@ -71,7 +73,7 @@ namespace BuchDatenbank
         }
 
 
-        //Loesche und FuegeWiederEin-Funktionen zum Verschieben der Bücher
+        //Loesche-Funktionen zum Verschieben der Bücher
         //Löscht aus linker Tabelle
         public void LoescheBuch(int id)
         {
@@ -85,22 +87,6 @@ namespace BuchDatenbank
         {
             Buch2DTO buch = _kontext.Buecher2.Find(id);
             _kontext.Buecher2.Remove(buch);
-            _kontext.SaveChanges();
-        }
-
-        //Fügt in rechte Tabelle ein
-        public void FuegeBuchWiederEin(int id)
-        {
-            Buch2DTO buch = _kontext.Buecher2.Find(id);
-            _kontext.Buecher2.Add(buch);
-            _kontext.SaveChanges();
-        }
-
-        //Fügt in linkte Tabelle ein
-        public void FuegeBuchWiederEin2(int id)
-        {
-            BuchDTO buch = _kontext.Buecher.Find(id);
-            _kontext.Buecher.Add(buch);
             _kontext.SaveChanges();
         }
     }

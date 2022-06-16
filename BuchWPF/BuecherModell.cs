@@ -82,16 +82,20 @@ namespace BuchWPF
             _repository.LoescheBuch2(buch.Id);
         }
 
+        //Fügt Buch ein und aktualisiert dann beide Tabellen
         internal void FuegeBuchWiederEin(Buch buch)
         {
-            _repository.FuegeBuchWiederEin(buch.Id);
+            _repository.FuegeBuecherEin2(buch.titel, buch.autor);
+            _repository.AktualisiereBuecher(buch.Id, buch.titel, buch.autor);
+            _repository.AktualisiereBuecher2(buch.Id, buch.titel, buch.autor);
         }
 
+        //Fügt Buch ein und aktualisiert dann beide Tabellen
         internal void FuegeBuchWiederEin2(Buch buch)
         {
-            _repository.FuegeBuchWiederEin2(buch.Id);
+            _repository.FuegeBuecherEin(buch.titel, buch.autor);
+            _repository.AktualisiereBuecher(buch.Id, buch.titel, buch.autor);
+            _repository.AktualisiereBuecher2(buch.Id, buch.titel, buch.autor);
         }
-
-        //Testpush
     }
 }
