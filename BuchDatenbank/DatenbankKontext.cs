@@ -28,11 +28,7 @@ namespace BuchDatenbank
         {
             modelBuilder.Entity<BuchDTO>().HasKey(e => e.Id);
         }
-        /*
-        protected override void OnModelCreating2(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Buch2DTO>().HasKey(e => e.Id);
-        }
-        */
+        
+        
     }
 }

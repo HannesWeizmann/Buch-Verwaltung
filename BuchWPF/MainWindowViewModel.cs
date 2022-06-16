@@ -21,16 +21,24 @@ namespace BuchWPF
             _modell = modell;
             InitialisiereDasViewModell();
 
-            
+            //Verschiebenkommando für Tabelle aktuelle Bücher
             VerschiebenKommando = new RelayCommand(
+                parameter => FuegeBuchWiederEin(parameter),
                 parameter => LoescheBuch(parameter),
-                parameter => FuegeBuchwiederein(parameter),
                 parameter => KannBuchLoeschen(parameter)
             );
-            
+
+            //Verschiebenkommando für Tabelle archivierte Bücher
+            VerschiebenKommando2 = new RelayCommand(
+                parameter => FuegeBuchWiederEin2(parameter),
+                parameter => LoescheBuch2(parameter),
+                parameter => KannBuchLoeschen(parameter)
+            );
+
         }
 
         public ICommand VerschiebenKommando { get; private set; }
+        public ICommand VerschiebenKommando2 { get; private set; }
 
         private void LoescheBuch(object? buch) 
         {
@@ -38,15 +46,29 @@ namespace BuchWPF
             _modell.LoescheBuch((Buch)buch);
             Buecher.Remove((Buch)buch);
         }
-        
+
+        private void LoescheBuch2(object? buch)
+        {
+            if (buch == null) return;
+            _modell.LoescheBuch2((Buch)buch);
+            Buecher2.Remove((Buch)buch);
+        }
+
         private bool KannBuchLoeschen(object? buch)
         {
             return buch != null;
         }
 
-        private void FuegeBuchwiederein(object? buch)
+        //FuegeBuchWiederEin fügt das in der linken Tabelle gelöschte in die rechte Tabelle ein und FuegeBuchWiederEin2 andersherum
+        private void FuegeBuchWiederEin(object? buch)
         {
-            _modell.FuegeBuchwiederein((Buch)buch);
+            _modell.FuegeBuchWiederEin((Buch)buch);
+            Buecher2.Add((Buch)buch);
+        }
+
+        private void FuegeBuchWiederEin2(object? buch)
+        {
+            _modell.FuegeBuchWiederEin((Buch)buch);
             Buecher.Add((Buch)buch);
         }
 
@@ -60,6 +82,7 @@ namespace BuchWPF
             }
         }
 
+        //Laden beider Buchliste in die Tabellen
         public async void InitialisiereDasViewModell()
         {
             var buecher = await _modell.LadeAlleBuecher();

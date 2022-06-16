@@ -2,6 +2,7 @@
 
 namespace BuchDatenbank
 {
+    //DTO für Tabelle aktuelle Bücher
     [Table("aktuelle_buecher")]
     public class BuchDTO
     {
@@ -16,6 +17,7 @@ namespace BuchDatenbank
 
     }
     
+    //DTO für Tabelle archivierte Bücher
     [Table("archivierte_buecher")]
     public class Buch2DTO
     {

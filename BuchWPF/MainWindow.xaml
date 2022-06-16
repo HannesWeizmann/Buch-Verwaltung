@@ -9,11 +9,13 @@
         Height="450" Width="900">
 
     <Grid>
+        <!-- Aufteilung des Fensters in 2 gleich große Hälften-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="450" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-
+        
+        <!-- Linke Tabelle wird erstellt , holt ihre Daten aus den Buecherobjekten-->
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
             <Menu>
                 <MenuItem Header="Aktuelle Bücher">
@@ -41,7 +43,8 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        
+
+        <!-- Rechte Tabelle wird erstellt , holt ihre Daten aus den Buecher2objekten-->
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
             <Menu>
                 <MenuItem Header="Archivierte Bücher">
@@ -60,7 +63,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Command="{Binding ElementName=buchTabelle2, Path=DataContext.VerschiebenKommando}" CommandParameter="{Binding}">
+                                <Button Command="{Binding ElementName=buchTabelle2, Path=DataContext.VerschiebenKommando2}" CommandParameter="{Binding}">
                                     Verschieben
                                 </Button>
                             </DataTemplate>

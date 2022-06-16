@@ -17,6 +17,8 @@ namespace BuchWPF
             _repository = repository;
         }
 
+        //Funktionen für Tabelle aktuelle Bücher
+        //Es werden alle Bücher geholt und dann eine Buchliste erstellt
         public async Task<IEnumerable<Buch>> LadeAlleBuecher()
         {
             List<BuchDTO>? buecher = await Task.Run(() => {
@@ -43,6 +45,7 @@ namespace BuchWPF
             return buchListe;
         }
 
+        //Funktionen für Tabelle archivierte Bücher
         public async Task<IEnumerable<Buch>> LadeAlleBuecher2()
         {
             List<Buch2DTO>? buecher = await Task.Run(() => {
@@ -69,14 +72,25 @@ namespace BuchWPF
             return buchListe2;
         }
 
+        //Loesche und FuegeWiederEin-Funktionen zum Verschieben der Bücher
         internal void LoescheBuch(Buch buch)
         {
             _repository.LoescheBuch(buch.Id);
         }
 
-        internal void FuegeBuchwiederein(Buch buch)
+        internal void LoescheBuch2(Buch buch)
         {
-            _repository.FuegeBuchwiederein(buch.Id);
+            _repository.LoescheBuch2(buch.Id);
+        }
+
+        internal void FuegeBuchWiederEin(Buch buch)
+        {
+            _repository.FuegeBuchWiederEin(buch.Id);
+        }
+
+        internal void FuegeBuchWiederEin2(Buch buch)
+        {
+            _repository.FuegeBuchWiederEin2(buch.Id);
         }
     }
 }

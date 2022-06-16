@@ -18,7 +18,8 @@ namespace BuchDatenbank
         }
 
 
-        /* vielleicht dann verschieben und dann aktualisieren*/
+        //Funktionen für Tabelle aktuelle Bücher
+        //Eine eine Aktualisieren-Funktion, eine eine Einfüg-Funktion von Büchern und eine Hole-Bücher-Funktion
         public void AktualisiereBuecher(int id, string titel, string autor)
         {
             BuchDTO buch = _kontext.Buecher.Find(id);
@@ -44,6 +45,7 @@ namespace BuchDatenbank
             return _kontext.Buecher.ToList();
         }
 
+        //Funktionen für Tabelle archivierte Bücher
         public void AktualisiereBuecher2(int id, string titel, string autor)
         {
             Buch2DTO buch = _kontext2.Buecher2.Find(id);
@@ -68,6 +70,9 @@ namespace BuchDatenbank
             return _kontext2.Buecher2.ToList();
         }
 
+
+        //Loesche und FuegeWiederEin-Funktionen zum Verschieben der Bücher
+        //Löscht aus linker Tabelle
         public void LoescheBuch(int id)
         {
             BuchDTO buch = _kontext.Buecher.Find(id);
@@ -75,7 +80,24 @@ namespace BuchDatenbank
             _kontext.SaveChanges();
         }
 
-        public void FuegeBuchwiederein(int id)
+        //Löscht aus rechter Tabelle
+        public void LoescheBuch2(int id)
+        {
+            Buch2DTO buch = _kontext.Buecher2.Find(id);
+            _kontext.Buecher2.Remove(buch);
+            _kontext.SaveChanges();
+        }
+
+        //Fügt in rechte Tabelle ein
+        public void FuegeBuchWiederEin(int id)
+        {
+            Buch2DTO buch = _kontext.Buecher2.Find(id);
+            _kontext.Buecher2.Add(buch);
+            _kontext.SaveChanges();
+        }
+
+        //Fügt in linkte Tabelle ein
+        public void FuegeBuchWiederEin2(int id)
         {
             BuchDTO buch = _kontext.Buecher.Find(id);
             _kontext.Buecher.Add(buch);
