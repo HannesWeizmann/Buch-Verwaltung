@@ -27,7 +27,6 @@ namespace BuchWPF
             var buchListe = erstelleBuchliste(buecher);
             return buchListe;
         }
-
         
         private IEnumerable<Buch> erstelleBuchliste(IEnumerable<BuchDTO> buecher)
         {
@@ -92,5 +91,7 @@ namespace BuchWPF
         {
             _repository.FuegeBuchWiederEin2(buch.Id);
         }
+
+        //Testpush
     }
 }
